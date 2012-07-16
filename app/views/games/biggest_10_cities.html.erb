@@ -1,0 +1,36 @@
+<div class="page-header">
+    <h1><%= @game.name %></h1>
+</div>
+
+<p>
+  <%= @game.description %>
+  
+  <div class="alert alert-info">
+    <strong>Tipp</strong> Klicke die Städte in der Reihenfolge an, wie du sie einordnen willst.<br /> 
+    Eine schon eingeordnete Stadt wird bei erneutem anklicken wieder freigegeben und die Position kann neu vergeben werden.
+  </div>
+</p>
+
+<div class="row show-grid">
+    <div class="span6">
+      <div class="geo_map" 
+           data-country="<%= @map.country %>" 
+           data-game_id="<%= @game.id %>" 
+           data-cities="[<%= cities_for_geocloud( @cities, 15 ) %>]">
+      </div>
+    </div>  
+    <div class="span6">
+      <ol style="float: right" id="output"></ol>
+    </div>
+</div>
+
+<!-- Action-Buttons -->
+<%= link_to( icon_for("Zurücksetzen", 'icon-repeat ', 'white'), '#', 
+  :id => 'btn_clear', :class => 'btn btn-danger') %>  
+  
+<%= link_to( icon_for("Abgeben", 'icon-check ', 'white'), '#', 
+  :id => 'btn_submit', :class => 'btn btn-success disabled') %>  
+
+<p class="pull-right">
+  <%= link_to "Zurück zur Übersicht", games_path %>
+</p>

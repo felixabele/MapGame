@@ -1,0 +1,145 @@
+Madrid;3.213.271 
+Barcelona;1.615.908 
+Valencia;807.200 
+Sevilla;699.759 
+Saragossa;666.129 
+Málaga;566.447 
+Murcia;430.571 
+Palma;396.570 
+Las Palmas de Gran Canaria;381.123 
+Bilbao;353.340 
+Alicante;331.750 
+Córdoba;325.453 
+Valladolid;318.461 
+Vigo;295.703 
+Gijón;275.699 
+L’Hospitalet de Llobregat;253.782 
+A Coruña;245.164 
+Granada;236.988 
+Vitoria-Gasteiz;232.477 
+Elche;228.348 
+Santa Cruz de Tenerife;221.956 
+Oviedo;220.644 
+Badalona;215.329 
+Cartagena;210.376 
+Móstoles;206.275 
+Terrassa;206.245 
+Jerez de la Frontera;205.364 
+Sabadell;203.969 
+Alcalá de Henares;203.645 
+Pamplona;197.275 
+Fuenlabrada;194.791 
+Almería;187.521 
+Donostia-San Sebastián;184.248 
+Leganés;184.209 
+Santander;182.302 
+Castellón de la Plana;177.924 
+Burgos;177.879 
+Alcorcón;167.997 
+Albacete;166.909 
+Getafe;164.043 
+Salamanca;155.740 
+Logroño;150.071 
+San Cristóbal de La Laguna;148.375 
+Huelva;148.027 
+Badajoz;146.832 
+Tarragona;137.536 
+León;135.119 
+Lleida;131.731 
+Marbella;130.549 
+Cádiz;127.200 
+Dos Hermanas;120.323 
+Mataró;119.780 
+Santa Coloma de Gramanet;117.336 
+Torrejón de Ardoz;116.455 
+Jaén;116.417 
+Algeciras;115.333 
+Parla;108.051 
+Reus;107.770 
+Alcobendas;107.514 
+Ourense;107.057 
+Torrevieja;107.057 
+Telde;99.201 
+Barakaldo;97.328 
+San Fernando;96.155 
+Lugo;95.416 
+Girona;94.484 
+Santiago de Compostela;94.339 
+Cáceres;92.187 
+Lorca;90.924 
+Coslada;89.918 
+Talavera de la Reina;87.763 
+El Puerto de Santa María;86.288 
+Cornellà de Llobregat;85.180 
+Orihuela;84.626 
+Avilés;83.517 
+Las Rozas de Madrid;83.428 
+Palencia;82.626 
+Pozuelo de Alarcón;81.365 
+Sant Boi de Llobregat;81.335 
+Getxo;81.260 
+Guadalajara;81.221 
+El Ejido;80.987 
+Toledo;80.810 
+Pontevedra;80.749 
+Gandia;79.958 
+Roquetas de Mar;77.423 
+Ceuta;77.389 
+Torrent;76.927 
+Sant Cugat del Vallès;76.274 
+Chiclana de la Frontera;76.171 
+Arona;75.903 
+Manresa;75.053 
+Ferrol;74.696 
+Vélez-Málaga;72.842 
+San Sebastián de los Reyes;72.414 
+Ciudad Real;72.208 
+Rubí;71.927 
+Melilla;71.448 
+Mijas;70.437 
+Benidorm;70.280 
+Fuengirola;68.646 
+Alcalá de Guadaíra;68.452 
+Ponferrada;67.969 
+Zamora;66.672 
+Majadahonda;66.585 
+Sagunto;65.821 
+Vilanova i la Geltrú;64.905 
+Rivas-Vaciamadrid;64.808 
+Sanlúcar de Barrameda;64.434 
+La Línea de la Concepción;64.240 
+Torremolinos;63.077 
+El Prat de Llobregat;62.899 
+Estepona;62.848 
+Viladecans;62.573 
+Molina de Segura;62.407 
+Paterna;61.941 
+Alcoy;61.698 
+Linares;61.340 
+Santa Lucía de Tirajana;61.325 
+Irun;60.914 
+Castelldefels;60.572 
+Granollers;60.122 
+Motril;59.163 
+Arrecife;59.040 
+Valdemoro;58.623 
+Cerdanyola del Vallès;58.493 
+Segovia;56.858 
+Ávila;56.144 
+Benalmádena;55.960 
+Torrelavega;55.910 
+Mérida;55.568 
+Elda;55.174 
+Collado Villalba;54.658 
+Cuenca;54.600 
+Aranjuez;52.224 
+Mollet del Vallès;51.912 
+San Vicente del Raspeig;51.507 
+Puertollano;51.305 
+San Bartolomé de Tirajana;51.260 
+Huesca;51.117 
+Calvià;50.777 
+Villarreal;50.626 
+Arganda del Rey;50.309 
+Siero;50.233 
+Utrera;50.098 

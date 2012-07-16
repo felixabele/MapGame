@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  country: MyString
+  size: MyString
+  geo_settings: MyString
+  ref_point: MyString
+  width: 1
+  height: 1
+  map_file: MyString
+
+two:
+  country: MyString
+  size: MyString
+  geo_settings: MyString
+  ref_point: MyString
+  width: 1
+  height: 1
+  map_file: MyString

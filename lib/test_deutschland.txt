@@ -1,0 +1,5 @@
+Hamburg;1.786.448 
+München;1.353.186 
+Köln;1.007.119 
+Frankfurt am Main;679.664 
+Stuttgart;606.588 

@@ -1,0 +1,8 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+berlin:
+  name: Berlin
+  population: 3460725
+  lon: 0
+  lat: 0
+  map_id: 1

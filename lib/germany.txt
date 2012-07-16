@@ -1,0 +1,157 @@
+Berlin;3.460.725 
+Hamburg;1.786.448 
+München;1.353.186 
+Köln;1.007.119 
+Frankfurt am Main;679.664 
+Stuttgart;606.588 
+Essen;574.635 
+Bremen;547.340 
+Leipzig;522.883 
+Hannover;522.686 
+Nürnberg;505.664 
+Bochum;374.737 
+Wuppertal;349.721 
+Bonn;324.899 
+Bielefeld;323.270 
+Mannheim;313.174 
+Karlsruhe;294.761 
+Münster;279.803 
+Wiesbaden;275.976 
+Augsburg;264.708 
+Aachen;258.664 
+Mönchengladbach;257.993 
+Braunschweig;248.867 
+Chemnitz;243.248 
+Kiel;239.526 
+Krefeld;235.076 
+Halle (Saale);232.963 
+Magdeburg;231.525 
+Freiburg im Breisgau;224.191 
+Oberhausen;212.945 
+Lübeck;210.232 
+Erfurt;204.994 
+Rostock;202.735 
+Mainz;199.237 
+Kassel;195.530 
+Hagen;188.529 
+Hamm;181.783 
+Saarbrücken;175.741 
+Mülheim an der Ruhr;167.344 
+Herne;164.762 
+Ludwigshafen am Rhein;164.351 
+Osnabrück;164.119 
+Oldenburg;162.173 
+Leverkusen;160.772 
+Solingen;159.927 
+Potsdam;156.906 
+Neuss;151.388 
+Heidelberg;147.312 
+Paderborn;146.283 
+Regensburg;135.520 
+Würzburg;133.799 
+Heilbronn;122.879 
+Ulm;122.801 
+Wolfsburg;121.451 
+Offenbach am Main;120.435 
+Pforzheim;119.781 
+Recklinghausen;118.365 
+Bottrop;116.771 
+Fürth;114.628 
+Bremerhaven;113.366 
+Reutlingen;112.484 
+Remscheid;110.563 
+Koblenz;106.417 
+Bergisch Gladbach;105.723 
+Erlangen;105.629 
+Moers;105.506 
+Jena;105.129 
+Siegen;103.424 
+Hildesheim;102.794 
+Salzgitter;102.394 
+Cottbus;102.091 
+Kaiserslautern;99.184 
+Witten;98.233 
+Schwerin;95.220 
+Zwickau;93.750 
+Esslingen am Neckar;91.869 
+Ratingen;91.088 
+Flensburg;88.759 
+Hanau;88.637 
+Ludwigsburg;87.735 
+Marl;87.557 
+Lünen;87.530 
+Konstanz;84.693 
+Velbert;84.033 
+Minden;82.114 
+Worms;81.736 
+Wilhelmshaven;81.324 
+Villingen-Schwenningen3;81.022 
+Marburg;80.656 
+Neumünster;76.830 
+Rheine;76.530 
+Lüdenscheid;75.463 
+Castrop-Rauxel;75.408 
+Viersen;75.360 
+Arnsberg;74.227 
+Bocholt;73.170 
+Lüneburg;72.983 
+Bayreuth;72.683 
+Norderstedt;71.992 
+Brandenburg an der Havel;71.778 
+Celle;70.242 
+Bamberg;70.004 
+Aschaffenburg;68.678 
+Lippstadt;66.976 
+Unna;66.502 
+Aalen;66.113 
+Plauen;66.098 
+Weimar;65.479 
+Neubrandenburg;65.282 
+Kerpen;64.602 
+Fulda;64.349 
+Neuwied;64.318 
+Herford;64.088 
+Landshut;63.258 
+Herten;62.235 
+Bergheim;62.129 
+Kempten (Allgäu);62.060 
+Rosenheim;61.299 
+Wesel;60.750 
+Sindelfingen;60.445 
+Frankfurt (Oder);60.330 
+Rüsselsheim;60.294 
+Schwäbisch Gmünd;59.654 
+Offenburg;59.215 
+Langenfeld (Rheinland);59.160 
+Friedrichshafen;59.002 
+Hürth;57.922 
+Hameln;57.771 
+Stralsund;57.670 
+Stolberg (Rheinland);57.474 
+Euskirchen;55.620 
+Hattingen;55.510 
+Eschweiler;55.505 
+Menden (Sauerland);55.496 
+Sankt Augustin;55.442 
+Hilden;55.441 
+Baden-Baden;54.445 
+Meerbusch;54.318 
+Bad Salzuflen;53.893 
+Pulheim;53.769 
+Neu-Ulm;53.504 
+Wolfenbüttel;53.427 
+Schweinfurt;53.415 
+Ahlen;53.414 
+Nordhorn;53.052 
+Waiblingen;52.900 
+Neustadt an der Weinstraße;52.855 
+Langenhagen;52.583 
+Bad Homburg vor der Höhe;52.229 
+Willich;51.949 
+Emden;51.616 
+Wetzlar;51.499 
+Lingen (Ems);51.177 
+Passau;50.594 
+Bergkamen;50.587 
+Erftstadt;50.553 
+Cuxhaven;50.492 
