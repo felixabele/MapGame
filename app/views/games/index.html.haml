@@ -1,0 +1,16 @@
+.page-header
+  %h1 Alle Spiele
+
+%table{:class => "table table-bordered table-striped"}
+  %thead
+    %tr
+      %th Spiel
+      %th Herausforderung
+      %th
+  %tbody
+    - @games.each do |game|
+      %tr
+        %td 
+          %h3= game.name
+        %td= game.description
+        %td= link_to( 'Spiel starten', biggest_10_cities_path(game))
