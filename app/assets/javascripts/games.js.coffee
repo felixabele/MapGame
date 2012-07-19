@@ -1,36 +1,6 @@
 #= require biggestCities
 
 # ============ COFFEE-SCRIPT FOR GAMES ================= #
-
-# -- Map specific Data
-map_data = 
-  germany:
-    width: 304
-    height: 400
-    map_src: '/assets/maps/germany_s.gif'
-    ref_point:
-      pixel_point: [137, 215], coord: [9.92968989, 51.538352]
-    geo_settings:  
-      x_corr: 0.76, y_corr: 1.22, coef: 0.0240139
-
-  spain:
-    width: 482
-    height: 400
-    map_src: '/assets/maps/spain_s.gif'
-    ref_point:
-      pixel_point: [235, 246], coord: [-3.7003454, 40.4166909]
-    geo_settings:  
-      x_corr: 0.81, y_corr: 1.04, coef: 0.0281
-      
-  italy:
-    width: 306
-    height: 400
-    map_src: '/assets/maps/italy_s.gif'
-    ref_point:
-      pixel_point: [149, 208], coord: [12.4942486, 41.8905198]
-    geo_settings:  
-      x_corr: 0.81, y_corr: 1.10, coef: 0.0316  
-
 # -- Map specific Options
 map_opt = 
   css: ''
@@ -54,12 +24,11 @@ $(document).ready ->
   
   if map_element.length > 0
     game_id = map_element.data( 'game_id' )
-    country = map_element.data( 'country' )
-    cities = map_element.data( 'cities' )
-    cities = eval( cities )
+    map = map_element.data( 'map' )
+    cities = eval( map_element.data( 'cities' ) )
     
     # Draw the map
-    map_element.geocloud(map_data[country])
+    map_element.geocloud(map)
     
     # Add Cities to the map
     for city in cities

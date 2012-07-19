@@ -3,4 +3,14 @@ class Map < ActiveRecord::Base
       
   has_many :games  
   has_many :cities
+  
+  # --- Get Map-Data for  jQuery Geocloud-Plugin
+  def get_geocloud_json
+    { :country      => self.country, 
+      :geo_settings => eval(self.geo_settings),
+      :ref_point    => eval(self.ref_point),
+      :width        => self.width,
+      :height       => self.height,
+      :map_src      => "/assets/maps/#{self.map_file}"}.to_json
+  end
 end

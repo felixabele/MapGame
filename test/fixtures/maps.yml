@@ -1,19 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  country: MyString
-  size: MyString
-  geo_settings: MyString
-  ref_point: MyString
-  width: 1
-  height: 1
-  map_file: MyString
-
-two:
-  country: MyString
-  size: MyString
-  geo_settings: MyString
-  ref_point: MyString
-  width: 1
-  height: 1
-  map_file: MyString
+  country: germany
+  size: small
+  geo_settings: "x_corr: 0.76, y_corr: 1.22, coef: 0.0240139"
+  ref_point: "pixel_point: [137, 215], coord: [9.92968989, 51.538352]"
+  width: 304
+  height: 400
+  map_file: germany_s.gif
