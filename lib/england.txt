@@ -1,0 +1,196 @@
+London;7.554.236 
+Birmingham;989.141 
+Glasgow;604.355 
+Liverpool;468.011 
+Leeds;460.459 
+Sheffield;449.971 
+Edinburgh;441.419 
+Bristol;435.028 
+Manchester;395.323 
+Leicester;343.019 
+Coventry;310.200 
+Cardiff;307.364 
+Bradford;301.499 
+Belfast;274.586 
+Stoke-on-Trent;260.336 
+Kingston upon Hull;258.700 
+Wolverhampton;252.814 
+Southampton;252.129 
+Reading;249.462 
+Plymouth;248.402 
+Nottingham;244.411 
+Derby;237.341 
+Northampton;200.787 
+Dudley;200.668 
+Luton;197.492 
+Portsmouth;197.471 
+Newcastle upon Tyne;193.267 
+Preston;193.215 
+Aberdeen;184.334 
+Norwich;179.048 
+Bournemouth;178.499 
+Sunderland;177.666 
+Walsall;172.282 
+Swansea;171.352 
+Swindon;165.633 
+Southend-on-Sea;164.563 
+Oxford;160.587 
+Poole;152.389 
+Dundee;150.935 
+Huddersfield;150.127 
+York;147.468 
+Ipswich;146.110 
+Blackpool;143.122 
+Middlesbrough;142.393 
+Bolton;142.002 
+Peterborough;141.608 
+Brighton;141.268 
+Stockport;140.282 
+Oldbury/Smethwick;139.278 
+Slough;137.982 
+West Bromwich;134.581 
+Cambridge/Milton;134.139 
+Gloucester;131.307 
+Watford;127.911 
+Newport;117.910 
+Rotherham;117.475 
+Exeter;116.250 
+Eastbourne;116.019 
+Colchester;111.778 
+Crawley;110.297 
+Sutton Coldfield;107.537 
+Blackburn;106.451 
+Cheltenham;105.315 
+Oldham;105.172 
+Woking/Byfleet;105.108 
+Chelmsford;103.783 
+Worcester;102.997 
+Gillingham;102.385 
+Saint Helens;102.284 
+Basildon;101.811 
+Worthing;99.935 
+Basingstoke;99.475 
+Rochdale;98.241 
+Harlow/Sawbridgeworth;97.545 
+Solihull;96.799 
+Bath;94.650 
+Southport;93.637 
+Maidstone;91.236 
+Lincoln;90.756 
+Hastings;90.570 
+Derry;89.085 
+Bedford;88.733 
+Harrogate/Knaresborough;87.788 
+Grimsby;87.701 
+Darlington;87.543 
+Hartlepool;86.841 
+Hemel Hempstead;86.758 
+Stevenage;86.131 
+Saint Albans;85.438 
+Weston-super-Mare;85.274 
+South Shields;83.867 
+Halifax;81.858 
+High Wycombe;81.848 
+Chester;81.718 
+Warrington;81.297 
+Lisburn;81.046 
+Birkenhead;80.604 
+Wigan;80.357 
+Wakefield;79.894 
+Stockton-on-Tees;79.695 
+Bracknell;78.763 
+Redditch;78.050 
+Aylesbury;77.405 
+Gateshead;77.089 
+Hove;76.493 
+Chatham;76.342 
+Newcastle-under-Lyme;76.308 
+Tamworth;75.217 
+East Kilbride;74.883 
+Nuneaton;74.829 
+Grays;74.559 
+Burnley;73.526 
+Paisley;72.990 
+Guildford;72.971 
+Lowestoft;72.965 
+Carlisle;72.882 
+Scunthorpe;72.251 
+Crewe;71.729 
+Gosport;71.387 
+Barnsley;71.173 
+Chesterfield;70.710 
+Shrewsbury;70.560 
+Mansfield;70.483 
+Salford;69.853 
+Cannock;69.489 
+Ellesmere Port;68.398 
+Beeston and Stapleford;68.183 
+Doncaster;67.336 
+Bognor Regis;66.930 
+Torquay;66.472 
+Royal Leamington Spa;66.149 
+Stafford;65.965 
+Epsom and Ewell;65.714 
+Kingswood;65.704 
+Newtownabbey;64.973 
+Ashford;64.676 
+Waterlooville;64.511 
+Wolverton/Stony Stratford;64.486 
+Rugby;63.842 
+Aldershot;62.944 
+Bangor;61.527 
+Loughborough;61.405 
+Royal Tunbridge Wells;61.402 
+Taunton;61.373 
+Farnborough;61.201 
+Bury;61.034 
+Margate;60.832 
+Great Yarmouth;60.267 
+Craigavon;60.199 
+Littlehampton;60.157 
+Maidenhead;59.621 
+Rhondda;59.430 
+Runcorn;59.295 
+Hereford;59.092 
+Morley;59.045 
+Wallasey;58.681 
+Cheshunt;58.333 
+Cheadle and Gatley;58.097 
+Fareham/Portchester;57.896 
+Dewsbury;57.735 
+Castlereagh;57.726 
+Kidderminster;57.160 
+Bootle;56.965 
+Stourbridge;56.549 
+Bebington;56.518 
+Dartford;56.485 
+Clacton-on-Sea;56.347 
+Widnes;56.144 
+Sale;55.787 
+Livingston;55.725 
+Halesowen;55.097 
+Eastleigh;54.868 
+Gravesend;54.785 
+Huyton-with-Roby;54.609 
+Kettering;54.396 
+Walton and Weybridge;54.207 
+Greasby/Moreton;53.877 
+Washington;53.371 
+Esher/Molesey;53.367 
+Morecambe;52.579 
+Dunstable;52.461 
+Crosby;52.186 
+Barry;52.154 
+Macclesfield;52.131 
+Horsham;52.087 
+Reigate/Redhill;52.012 
+Bletchley;51.692 
+Batley;51.374 
+Wellingborough;51.177 
+Staines;51.168 
+Weymouth;51.108 
+Paignton;51.082 
+West Bridgford;50.923 
+Keighley;50.409 
+Corby;50.316 
+Carlton;50.179 
