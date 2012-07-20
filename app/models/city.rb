@@ -8,8 +8,8 @@ class City < ActiveRecord::Base
   # ===================================
   #   Update Geocode
   # ===================================
-  def update_geocodes
-    place = Geocoder.search(self.name).first
+  def update_geocodes (country = '')
+    place = Geocoder.search("#{self.name}, #{country}").first
     sleep(0.3)
     unless place.nil?
       self.lat = place.geometry['location']['lat']
@@ -60,7 +60,7 @@ class City < ActiveRecord::Base
       if !(city.nil?) || self.where("name = :city_name AND map_id = :map_id", {:city_name => city.name, :map_id => city.map_id}).nil?
         city.save!      
         # Update Geocodes
-        city.update_geocodes
+        city.update_geocodes( country )
       end      
       row_count += 1
     end
