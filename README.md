@@ -9,7 +9,7 @@ Beside this my focus is on TDD and any new kick-ass features provided by Rails 3
 Game
 =======
 Till now you have:
-    "10 biggest cities of .. Germany, Spain and Italy"
+    "10 biggest cities of .. Germany, Spain, Italy, France and Great Britain"
 
 to come:
     "Indicate a City on an empty map"
