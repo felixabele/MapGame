@@ -4,9 +4,11 @@
     %title MapGame
     = stylesheet_link_tag "application", "bootstrap", :media => "all"
     = javascript_include_tag "application"
+    = javascript_include_tag "jquery_drag_drop"
     = csrf_meta_tags
-
-  %body
+    
+  -# pass the action to body as data so we can load CoffeeScript accoring to the selected Action  
+  %body{ :data => { :controller => params[:controller], :action => params[:action]} }
 
     -# Navigation
     .navbar

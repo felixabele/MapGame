@@ -13,6 +13,8 @@ class GamesController < ApplicationController
   # ------------------------------
   # => CUSTOM Games
   # ------------------------------
+  
+  # --- name the 10 biggest cities in descending order
   def biggest_10_cities
     @game = Game.find( params[:id] )
     @cities = @game.cities.order( "population DESC" ).limit( 10 )
@@ -35,4 +37,11 @@ class GamesController < ApplicationController
     end        
     render :json => result
   end  
+  
+  # --- place 10 cities of a country on an empty mapW
+  def empty_map
+    @game = Game.find( params[:id] )
+    @cities = @game.cities.order( "population DESC" ).limit( 10 )
+    @map = @game.map    
+  end
 end

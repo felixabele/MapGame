@@ -6,6 +6,7 @@ MapGame::Application.routes.draw do
   #   Custom Games
   # -------------------------
   match '/biggest_10_cities(/:id)' => 'games#biggest_10_cities', :as => :biggest_10_cities
+  match '/empty_map(/:id)' => 'games#empty_map', :as => :empty_map
   match '/validate_biggest_10_cities(/:id)' => 'games#validate_biggest_10_cities', :as => :validate_biggest_10_cities
   
  # resources :games do

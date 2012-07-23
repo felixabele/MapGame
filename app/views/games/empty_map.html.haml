@@ -3,14 +3,15 @@
 
 %p= @game.description
 .alert.alert-info
-  <strong>Tipp</strong> Klicke die Städte in der Reihenfolge an, wie du sie einordnen willst.<br />
-  Eine schon eingeordnete Stadt wird bei erneutem anklicken wieder freigegeben und die Position kann neu vergeben werden.
+  <strong>Tipp</strong> ziehe die Städte an die Position auf der Karte wo du sie vermutest.
 
 %div.row.show-grid
   .span6
-    .geo_map{ "data-map" => @map.get_geocloud_json, "data-game_id" => @game.id, "data-cities" => cities_for_geocloud( @cities, 15 ) }
-  .span6
-    %ol{ :style => "float: right", :id => "output" }
+    .geo_map{ "data-map" => @map.get_geocloud_json, "data-game_id" => @game.id }
+  .span6.geo_cloud
+    - @cities.each do |city|
+      .raw_point
+        %span.city_name= city.name
 
 -# Action-Links
 = link_to( icon_for("Zurücksetzen", 'icon-repeat ', 'white'), '#', :id => 'btn_clear', :class => 'btn btn-danger')  
