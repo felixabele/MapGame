@@ -15,13 +15,16 @@ class GamesController < ApplicationController
   # ------------------------------
   
   # --- name the 10 biggest cities in descending order
+  #     @params: game.id, 
   def biggest_10_cities
     @game = Game.find( params[:id] )
     @cities = @game.cities.order( "population DESC" ).limit( 10 )
     @map = @game.map
   end
   
-  # get the answere
+  
+  # --- get the answere for the 10 Biggest cities
+  #     @params: game.id, 
   def validate_biggest_10_cities
     @game = Game.find( params[:id] )
     cities = @game.cities.order( "population DESC" ).limit( 10 )
@@ -38,10 +41,29 @@ class GamesController < ApplicationController
     render :json => result
   end  
   
-  # --- place 10 cities of a country on an empty mapW
+  
+  # --- place 10 cities of a country on an empty map
+  #     @params: game.id, 
   def empty_map
     @game = Game.find( params[:id] )
     @cities = @game.cities.order( "population DESC" ).limit( 10 )
     @map = @game.map    
+  end
+  
+  
+  # --- get the answere, and see how you put the cities at the right position
+  #     @params: Cities[] "Berlin, Dresden, Hamburg"
+  def validate_empty_map
+    params[:cities].each do |city_name|
+      cities = City.where( "name in ('Berlin')" )
+      result = Array.new
+      cities.each do |city|
+        result.push({
+            :title => city.name,
+            :size => 10,
+            :coord => [city.lon, city.lat]})
+      end
+    end
+    render :json => result.to_json
   end
 end

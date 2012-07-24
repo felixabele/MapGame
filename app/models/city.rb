@@ -5,6 +5,7 @@ class City < ActiveRecord::Base
   attr_accessible :lat, :lon, :name, :population, :map_id
   belongs_to :map
   
+  
   # ===================================
   #   Update Geocode
   # ===================================
@@ -64,7 +65,7 @@ class City < ActiveRecord::Base
       end      
       row_count += 1
     end
-    city_file.close    
+    city_file.close
     row_count
   end  
 end

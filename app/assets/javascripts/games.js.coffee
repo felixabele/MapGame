@@ -82,24 +82,48 @@ $(document).bind 'biggest_10_cities_games.load', (e,obj) =>
 $(document).bind 'empty_map_games.load', (e,obj) => 
   console.log "Load Events for Action: empty_map"
 
+  #= require emptyMap
+
+  # Init Map
+  map_element = $( '.geo_map' )
+  map_posi = map_element.position()
+  game_id = map_element.data( 'game_id' )
+  map = map_element.data( 'map' )
+
+  # INIT game
+  game = new EmptyMap('#output', '#btn_submit')
+
+  # Draw the map
+  map_element.geocloud(map)
+
+  # -----------------------------
+  #   DRAG'n'DROP
+  # -----------------------------
   # Drag a City
   $( ".geo_cloud div" ).draggable
-    revert: 'invalid'
-  
-  map_posi = $( ".geo_map" ).position()
+    revert: 'invalid'    
   
   # And drop it somewhere on the Map
   $( ".geo_map" ).droppable
-    drop: ( event, ui ) ->
-      #console.log ui.draggable.find('.city_name').html()
+    drop: ( event, ui ) ->      
       drag_posi = ui.draggable.position()
-      console.log drag_posi.left-map_posi.left
-      console.log drag_posi.top-map_posi.top
+      rel_left = drag_posi.left-map_posi.left-5
+      rel_bottom  = map_element.height()-(drag_posi.top-map_posi.top)-5
+      city_name = ui.draggable.find('.city_name').html()            
+      geo_point = map_element.data( 'geocloud' ).pixelsToCoords( [rel_left, rel_bottom] )
+      
+      # Add City or update position
+      game.addOrMoveCity 
+        title: city_name
+        coord: geo_point
+        pixel_point: [rel_left, rel_bottom]
 
-  map_element = $( '.geo_map' )
-  if map_element.length > 0
-    game_id = map_element.data( 'game_id' )
-    map = map_element.data( 'map' )
 
-    # Draw the map
-    map_element.geocloud(map)    
+  # -----------------------------
+  #   SUBMIT
+  # -----------------------------
+  $('#btn_submit').click -> 
+    if game.is_active
+      game.submit() if not $(@).hasClass 'disabled'
+      false
+      
