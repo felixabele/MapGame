@@ -10,8 +10,11 @@
     .geo_map{ "data-map" => @map.get_geocloud_json, "data-game_id" => @game.id }
   .span6.geo_cloud
     - @cities.each do |city|
-      .raw_point
+      .raw_point{ :title => city.name }
         %span.city_name= city.name
+    
+    -# Output    
+    %ol{ :id => "output" }
 
 -# Action-Links
 = link_to( icon_for("Abgeben", 'icon-check ', 'white'), '#', :id => 'btn_submit', :class => 'btn btn-success disabled')

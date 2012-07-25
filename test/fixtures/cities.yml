@@ -3,6 +3,55 @@
 berlin:
   name: Berlin
   population: 3460725
-  lon: 0
-  lat: 0
+  lon: 13.4061
+  lat: 52.5192
   map_id: 1
+  
+Hamburg:
+  name: Hamburg
+  population: 1786448
+  lon: 9.99368
+  lat: 53.5511
+  map_id: 1  
+  
+München:
+  name: München
+  population: 1353186
+  lon: 11.5771
+  lat: 48.1366
+  map_id: 1  
+  
+Köln:
+  name: Köln
+  population: 1007119
+  lon: 6.96028
+  lat: 50.9375
+  map_id: 1  
+  
+Frankfurt am Main:
+  name: Frankfurt am Main
+  population: 679664
+  lon: 8.68213
+  lat: 50.1109
+  map_id: 1  
+  
+Stuttgart:
+  name: Stuttgart
+  population: 606588
+  lon: 9.18176
+  lat: 48.7754
+  map_id: 1  
+  
+Essen:
+  name: Essen
+  population: 574635
+  lon: 7.01156
+  lat: 51.4556
+  map_id: 1  
+  
+Bremen:
+  name: Bremen
+  population: 547340
+  lon: 8.80169
+  lat: 53.0793
+  map_id: 1    

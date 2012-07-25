@@ -1,6 +1,6 @@
 // jQuery Geo-Cloud-Plugin
 // Country Map with custum Elements
-// version 0.5, 08.06.2012
+// version 0.6, 25.07.2012
 // by Felix Abele
 
 (function($) {
@@ -77,9 +77,9 @@
         plugin.drawPoint = function( city, opt ) {                        
             
             // Set opt to default if unset
-            if (!opt) {
-                var opt = {css: {}, events: {}, attr: {}};
-            }
+            if (!opt) { var opt = {} }
+            var bs_opt = {css: {}, events: {}, attr: {}};            
+            opt = $.extend({}, bs_opt, opt)
             
             // get Pixel-Point from Geo-Point
             var point = get_by_reference( city.coord ),
@@ -122,7 +122,7 @@
                 plugin.drawPoint(cities[i], opt);
             }
         }
-        
+
         // --- Draw A Line By Name (Only if Canvas is enabled)
         //     @params: 
         //          from = 'Berlin'
@@ -156,7 +156,7 @@
                 lat2  = (p2.coord[1] / 180 * Math.PI),
                 len2  = (p2.coord[0] / 180 * Math.PI);
             var e = Math.acos( Math.sin(lat1)*Math.sin(lat2) + Math.cos(lat1)*Math.cos(lat2)*Math.cos(len2-len1) );
-            return (e * 6378.137);
+            return parseInt(e * 6378.137);
         }
         
         // --- Get Geopoint from Pixel
@@ -171,15 +171,15 @@
                 px_y_diff = (ref_p.pixel_point[1]-pixel_point[1])*coef;  
             
             // transform it to grad
-            var px_x = ref_p.coord[0] - (px_x_diff / plugin.settings.geo_settings.x_corr),
-                px_y = ref_p.coord[1] - (px_y_diff / plugin.settings.geo_settings.y_corr);
+            var geo_x = ref_p.coord[0] - (px_x_diff / plugin.settings.geo_settings.x_corr),
+                geo_y = ref_p.coord[1] - (px_y_diff / plugin.settings.geo_settings.y_corr);
             
-            return [px_x, px_y]
+            return [geo_x, geo_y]
         }
 
         // --- Get Geopoint from Pixel
         //    @param: point = [1.444209, 43.604652]
-        plugin.CoordsToPixels = function( geo_point ) {
+        plugin.coordsToPixels = function( geo_point ) {
             return get_by_reference( geo_point );
         }
 
@@ -204,7 +204,7 @@
             var px_x = ref_p.pixel_point[0] + px_x_diff,
                 px_y = ref_p.pixel_point[1] + px_y_diff;      
 
-            return [px_x, px_y];
+            return [parseInt(px_x), parseInt(px_y)];
         }
         
         // --- Draw A Line between two points on Canvas-Element

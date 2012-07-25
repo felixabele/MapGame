@@ -4,11 +4,6 @@ class GamesController < ApplicationController
   def index
     @games = Game.all
   end    
-  
-  # --- Show
-  def show
-    @game = Game.find( params[:id] )
-  end
     
   # ------------------------------
   # => CUSTOM Games
@@ -54,10 +49,10 @@ class GamesController < ApplicationController
   # --- get the answere, and see how you put the cities at the right position
   #     @params: Cities[] "Berlin, Dresden, Hamburg"
   def validate_empty_map
-    params[:cities].each do |city_name|
-      cities = City.where( "name in ('Berlin')" )
-      result = Array.new
-      cities.each do |city|
+    result = Array.new
+    unless params[:cities].nil?
+      params[:cities].each do |city_name|
+        city = City.find_by_name( city_name )
         result.push({
             :title => city.name,
             :size => 10,

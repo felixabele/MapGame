@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  description: MyText
+  id: 1
+  map_id: 1
+  name: 10 größten städte Deutschlands
+  description: Benenne die 10 Bevölkerungsreichsten Städte in Deutschland in der richtigen Reihenfolge
 
 two:
-  name: MyString
-  description: MyText
+  id: 2
+  map_id: 1
+  name: 10 Städte in Deutschland korrekt lokalisieren
+  description: Ziehe 10 Städte in Deutschland auf die richtige Position auf eine leere Karte

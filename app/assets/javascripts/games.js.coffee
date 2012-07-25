@@ -91,9 +91,10 @@ $(document).bind 'empty_map_games.load', (e,obj) =>
   map = map_element.data( 'map' )
 
   # INIT game
-  game = new EmptyMap('#output', '#btn_submit')
+  game = new EmptyMap('#output', '#btn_submit', '.geo_map')
 
   # Draw the map
+  map.use_canvas = true
   map_element.geocloud(map)
 
   # -----------------------------
@@ -105,18 +106,36 @@ $(document).bind 'empty_map_games.load', (e,obj) =>
   
   # And drop it somewhere on the Map
   $( ".geo_map" ).droppable
-    drop: ( event, ui ) ->      
+    drop: ( event, ui ) -> 
+      city_name = ui.draggable.find('.city_name').html()
       drag_posi = ui.draggable.position()
-      rel_left = drag_posi.left-map_posi.left-5
-      rel_bottom  = map_element.height()-(drag_posi.top-map_posi.top)-5
-      city_name = ui.draggable.find('.city_name').html()            
-      geo_point = map_element.data( 'geocloud' ).pixelsToCoords( [rel_left, rel_bottom] )
+      map_el = $(@)
       
-      # Add City or update position
-      game.addOrMoveCity 
-        title: city_name
-        coord: geo_point
-        pixel_point: [rel_left, rel_bottom]
+      if game.cityIsInStack( city_name )
+              
+        # update position
+        game.updateCity
+          title: city_name
+          pixel_point: [drag_posi.top, drag_posi.left]
+          coord: map_element.data( 'geocloud' ).pixelsToCoords( [rel_left, rel_top] )
+          
+      else 
+        rel_top  = drag_posi.top-map_posi.top
+        rel_left = drag_posi.left-map_posi.left
+        rel_bott = map_el.height()-rel_top
+        
+        ui.draggable.removeClass( 'raw_point' ).addClass( 'dragged_point' ) 
+        ui.draggable.appendTo( map_el )
+        ui.draggable.css 
+          top: rel_top-5
+          left: rel_left-10
+          position: 'absolute'
+
+        # Add City
+        game.addCity 
+          title: city_name
+          pixel_point: [rel_left, rel_top]
+          coord: map_element.data( 'geocloud' ).pixelsToCoords( [rel_left, rel_bott] )
 
 
   # -----------------------------

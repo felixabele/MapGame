@@ -3,7 +3,7 @@
 # ============================================ 
 # Place Cities on an empty map
 class EmptyMap
-  constructor: (@output_el, @submit_el) ->
+  constructor: (@output_el, @submit_el, @map_el) ->
     
     # SETTINGS
     @stack = {}
@@ -24,21 +24,26 @@ class EmptyMap
     for title, data of @stack
       result.push(title)  
     result
+  
+  # --- is the given city already in the stack
+  cityIsInStack: (city_title) ->
+    @stack[city_title]
+  
      
   # ---------------------------------------------------
   # -- add the city to the stack or change the position
   # ---------------------------------------------------
   # @params: {title: 'berlin', coord:[11.1597,52.9991], pixel:[120,70]}
-  addOrMoveCity: (ref) -> 
-  
-    # increment counter on insert, if all cities are placed enable submit button    
-    @stack_count++ if not @stack[ref.title]    
+  addCity: (ref) -> 
+    @stack_count++
     #$(@submit_el).removeClass 'disabled' if @stack_count is @stack_limit
     $(@submit_el).removeClass 'disabled'
     
-    # Update Stack
+    # insert into Stack
     @stack[ref.title] = ref
-     
+
+  updateCity: (ref) ->
+    @stack[ref.title] = ref
      
   # ---------------------------------------------------  
   # --- Submit Game (only if game is still active)
@@ -54,11 +59,27 @@ class EmptyMap
         error: (jqXHR, textStatus, errorThrown) ->
           console.log "Validtion failed: #{textStatus}"
         success: (data, textStatus, jqXHR) =>
-          console.log data
+          @validate( data )
 
   # Validate with Data from Database
   validate: (results) ->  
+    
+    map_el = $( @map_el ).data( 'geocloud' )
+    put_el = $( @output_el )
   
+    # Options for the correct location
+    opt = attr: {class: 'correct_location'}
+      
+    count = 0  
+    for corr_city in results
+      count++
+      city_name = corr_city.title
+      corr_city.title = count      
+      map_el.drawPoint( corr_city, opt )
+      distance = map_el.drawLine( corr_city, @stack[city_name] )
+            
+      console.log "#{distance}"
+      
 # ---------------------------------------------    
 
 # Add Class to global context
