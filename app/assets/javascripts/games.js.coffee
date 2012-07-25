@@ -87,7 +87,6 @@ $(document).bind 'empty_map_games.load', (e,obj) =>
   # Init Map
   map_element = $( '.geo_map' )
   map_posi = map_element.position()
-  game_id = map_element.data( 'game_id' )
   map = map_element.data( 'map' )
 
   # INIT game

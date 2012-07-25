@@ -8,16 +8,11 @@ class EmptyMap
     # SETTINGS
     @stack = {}
     @stack_count = 0
-    @game_id = ''
     @stack_limit = 10
     @validation_action = '/validate_empty_map'
     @is_active = true
     @message_el = '.alert'
-  
-  # --- Set Game Id
-  setGameId: (game_id) ->
-    @game_id = game_id         
-          
+     
   # --- Get City-Names in stack
   getCityNames: ->  
     result = []
@@ -33,7 +28,9 @@ class EmptyMap
   # ---------------------------------------------------
   # -- add the city to the stack or change the position
   # ---------------------------------------------------
-  # @params: {title: 'berlin', coord:[11.1597,52.9991], pixel:[120,70]}
+  
+  # --- Insert into city-stack
+  # @params: {title: 'berlin', coord:[11.1597,52.9991], pixel:[120,70]}  
   addCity: (ref) -> 
     @stack_count++
     #$(@submit_el).removeClass 'disabled' if @stack_count is @stack_limit
@@ -42,11 +39,12 @@ class EmptyMap
     # insert into Stack
     @stack[ref.title] = ref
 
+  # --- Update city-stack
   updateCity: (ref) ->
     @stack[ref.title] = ref
      
   # ---------------------------------------------------  
-  # --- Submit Game (only if game is still active)
+  # --- Submit and validate Game (only if game is still active)
   # ---------------------------------------------------
   submit: ->  
     if @is_active
@@ -61,11 +59,12 @@ class EmptyMap
         success: (data, textStatus, jqXHR) =>
           @validate( data )
 
-  # Validate with Data from Database
+  # --- Validate with Data from Database
   validate: (results) ->  
     
     map_el = $( @map_el ).data( 'geocloud' )
-    put_el = $( @output_el )
+    out_el = $( @output_el )
+    distance_sum = 0
   
     # Options for the correct location
     opt = attr: {class: 'correct_location'}
@@ -78,7 +77,16 @@ class EmptyMap
       map_el.drawPoint( corr_city, opt )
       distance = map_el.drawLine( corr_city, @stack[city_name] )
             
-      console.log "#{distance}"
+      if distance > 50 
+        cl = 'icon-remove'
+      else 
+        cl = 'icon-ok'
+      
+      distance_sum += distance
+      out_el.append "<li>#{city_name} <span><i class='#{cl}'></i>#{distance} Km</span></li>"
+      
+    out_el.append "<br /><h3>#{distance_sum} Km</h3>"
+      
       
 # ---------------------------------------------    
 

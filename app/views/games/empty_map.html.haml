@@ -7,7 +7,7 @@
 
 %div.row.show-grid
   .span6
-    .geo_map{ "data-map" => @map.get_geocloud_json, "data-game_id" => @game.id }
+    .geo_map{ "data-map" => @map.get_geocloud_json }
   .span6.geo_cloud
     - @cities.each do |city|
       .raw_point{ :title => city.name }
