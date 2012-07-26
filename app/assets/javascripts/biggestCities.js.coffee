@@ -88,15 +88,17 @@ class BiggestCities
       c++
       
     # Trace Feedback
-    msg_out = $(@message_el)
+    msg_out = $( @message_el )
+    feedback = @getMessage( {errors: errors} ).feedback
+      
     if errors == 0
-      msg_out.html("<strong>Super!</strong> Du hast alle Städte korrekt eingeordnet.")
+      msg_out.html( feedback.best )
       msg_out.removeClass('alert-info').addClass('alert-success')
     else if errors < 6
-      msg_out.html("<strong>OK!</strong> Du bist mit nur #{errors} Fehlern noch ganz gut dabei.")
+      msg_out.html( feedback.ok )
       msg_out.removeClass('alert-info').addClass('alert-block')  
     else
-      msg_out.html("<strong>Nicht so gut!</strong> #{errors} Fehler sind etwas zu viele, du solltest dein geographisches Wissen etwas auffrischen.")
+      msg_out.html( feedback.bad )
       msg_out.removeClass('alert-info').addClass('alert-error')          
     
     msg_out.append("<br /> <a href='/'>Zurück zur Übersicht</a>")
@@ -115,6 +117,15 @@ class BiggestCities
         @stack[index] = ''
       @filled_slots = 0
       $(@output_el).html ''
+  
+  # ---------------------------------------------------  
+  # --- Get Message
+  # ---------------------------------------------------    
+  getMessage: (opt) ->
+      feedback:
+        best: "<strong>Super!</strong> Du hast alle Städte korrekt eingeordnet."
+        ok:   "<strong>OK!</strong> Du bist mit nur #{opt.errors} Fehlern noch ganz gut dabei." 
+        bad:  "<strong>Nicht so gut!</strong> #{opt.errors} Fehler sind etwas zu viele, du solltest dein geographisches Wissen etwas auffrischen."        
   
 # ---------------------------------------------    
 

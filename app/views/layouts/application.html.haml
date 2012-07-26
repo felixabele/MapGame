@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title MapGame
+    %title Map Games - Spaß mit Geodaten
     = stylesheet_link_tag "application", "bootstrap", :media => "all"
     = javascript_include_tag "application"
     = javascript_include_tag "jquery_drag_drop"
@@ -17,7 +17,8 @@
           %a.brand{ :href => "" } Map Games
           .nav-collapse
             %ul.nav
-              %li= link_to "Alle Spiele", games_path
+              %li= link_to( "Die Größten Städte",   {:controller => 'games', :cat => 'biggest_cities'} )
+              %li= link_to( "Städte lokalisieren",  {:controller => 'games', :cat => 'empty_map'} )
 
     -# Content-Container
     .container

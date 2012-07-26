@@ -2,9 +2,10 @@ class GamesController < ApplicationController
   
   # --- Index
   def index
-    @games = Game.all
-  end    
-    
+    @game_cat = params[:cat]
+    @games = Game.find_all_by_category( @game_cat )        
+  end
+  
   # ------------------------------
   # => CUSTOM Games
   # ------------------------------

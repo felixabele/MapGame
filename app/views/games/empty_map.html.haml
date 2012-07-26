@@ -20,4 +20,4 @@
 = link_to( icon_for("Abgeben", 'icon-check ', 'white'), '#', :id => 'btn_submit', :class => 'btn btn-success disabled')
 
 %p{ :class => "pull-right" }
-  = link_to "Zurück zur Übersicht", games_path
+  = link_to "Zurück zur Übersicht", {:controller => 'games', :cat => 'empty_map'}

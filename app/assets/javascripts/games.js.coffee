@@ -107,17 +107,17 @@ $(document).bind 'empty_map_games.load', (e,obj) =>
   $( ".geo_map" ).droppable
     drop: ( event, ui ) -> 
       city_name = ui.draggable.find('.city_name').html()
-      drag_posi = ui.draggable.position()
+      drag_posi = ui.draggable.position()      
       map_el = $(@)
       
-      if game.cityIsInStack( city_name )
-              
+      if game.cityIsInStack( city_name )          
+          
         # update position
         game.updateCity
           title: city_name
-          pixel_point: [drag_posi.top, drag_posi.left]
-          coord: map_element.data( 'geocloud' ).pixelsToCoords( [rel_left, rel_top] )
-          
+          pixel_point: [drag_posi.left, drag_posi.top]
+          coord: map_element.data( 'geocloud' ).pixelsToCoords( [drag_posi.left, map_el.height()-drag_posi.top] )          
+        
       else 
         rel_top  = drag_posi.top-map_posi.top
         rel_left = drag_posi.left-map_posi.left
@@ -135,13 +135,14 @@ $(document).bind 'empty_map_games.load', (e,obj) =>
           title: city_name
           pixel_point: [rel_left, rel_top]
           coord: map_element.data( 'geocloud' ).pixelsToCoords( [rel_left, rel_bott] )
-
-
+          
   # -----------------------------
   #   SUBMIT
   # -----------------------------
   $('#btn_submit').click -> 
     if game.is_active
       game.submit() if not $(@).hasClass 'disabled'
+      $( ".geo_cloud div" ).draggable( 'disable' )
+      $(@).addClass 'disabled'
       false
       

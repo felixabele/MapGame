@@ -1,5 +1,12 @@
+- if @game_cat == 'biggest_cities'
+  - title   = "Markiere die 10 Größten Städte in der richtigen Reihenfolge"
+  - action  = 'biggest_10_cities'
+- elsif @game_cat == 'empty_map'
+  - title   = "Setze die Städte an ihre richtige Stelle"
+  - action  = 'empty_map'
+
 .page-header
-  %h1 Alle Spiele
+  %h1= title
 
 %table{:class => "table table-bordered table-striped"}
   %thead
@@ -13,4 +20,4 @@
         %td 
           %h3= game.name
         %td= game.description
-        %td= link_to( 'Spiel starten', biggest_10_cities_path(game))
+        %td= link_to( 'Spiel starten', {:action => action, :id => game.id})
