@@ -24,3 +24,6 @@ gem 'jquery-rails'
 gem 'geocoder'
 
 gem "haml"
+
+# https://github.com/grosser/single_test
+gem 'single_test'

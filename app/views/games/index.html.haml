@@ -1,23 +1,38 @@
 - if @game_cat == 'biggest_cities'
   - title   = "Markiere die 10 Größten Städte in der richtigen Reihenfolge"
-  - action  = 'biggest_10_cities'
 - elsif @game_cat == 'empty_map'
   - title   = "Setze die Städte an ihre richtige Stelle"
-  - action  = 'empty_map'
 
-.page-header
-  %h1= title
+- if @game_cat.nil?
+  .page-header
+    %h1
+      Spiele mit Karten
+      %small lerne die Welt kennen
+    
+  .row
+    .span6
+      %h3 Wie groß ist welche Stadt ?
+      %p Ordne die Städte nach ihrer Größe absteigend ein.
+      .map_icons
+        - @games[:biggest_cities].each do |game|
+          = game_icon_link( game )
+    .span6
+      %h3 Wo ist welche Stadt ?
+      %p Platziere die Städte auf einer leeren Karte.
+      .map_icons
+        - @games[:empty_map].each do |game|
+          = game_icon_link( game )
 
-%table{:class => "table table-bordered table-striped"}
-  %thead
-    %tr
-      %th Spiel
-      %th Herausforderung
-      %th
-  %tbody
-    - @games.each do |game|
-      %tr
-        %td 
-          %h3= game.name
-        %td= game.description
-        %td= link_to( 'Spiel starten', {:action => action, :id => game.id})
+- else
+  .page-header
+    %h1= title
+
+  %p Wähle eine Karte, auf der du Spielen willst
+
+  - @games.each do |game|
+    = game_icon_link( game )
+
+  .clear
+  %hr
+  %p{ :class => "pull-right" }
+    = link_to "Übersicht aller Spiele anzeigen", '/'

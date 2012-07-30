@@ -5,3 +5,7 @@
 require File.expand_path('../config/application', __FILE__)
 
 MapGame::Application.load_tasks
+
+# Activate Single Test-Gem
+require 'single_test'
+SingleTest.load_tasks

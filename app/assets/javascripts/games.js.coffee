@@ -3,8 +3,8 @@
 # ============================================
 # --- 10 Biggest Cities
 # ============================================
-$(document).bind 'biggest_10_cities_games.load', (e,obj) =>
-  console.log "Load Events for Action: biggest_10_cities"
+$(document).bind 'biggest_cities_games.load', (e,obj) =>
+  console.log "Load Events for Action: biggest_cities"
   
   #= require biggestCities
   

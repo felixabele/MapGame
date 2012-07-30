@@ -21,7 +21,7 @@ module MapsHelper
   def cities_for_geocloud( cities, size=10 )
     ds = Array.new
     cities.each do |city|
-      ds << "{title: '#{city.name.truncate(16)}', size: #{size}, coord: [#{city.lon},#{city.lat}], id: #{city.id}}"
+      ds << "{title: '#{city.name}', size: #{size}, coord: [#{city.lon},#{city.lat}], id: #{city.id}}"
     end
     "[#{ds.join(',')}]".html_safe
   end

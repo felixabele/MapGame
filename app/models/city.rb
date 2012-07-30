@@ -6,6 +6,23 @@ class City < ActiveRecord::Base
   belongs_to :map
   
   
+  
+  # --- Get The biggest Cities
+  def self.biggest(limit=10)
+    self.order( "population DESC" ).limit( limit )
+  end
+
+  # --- Get Cities randomly
+  def self.random(limit=10)
+    self.order( "RAND()" ).limit( limit )
+  end
+  
+  # --- Get Cities By name Array
+  def self.get_by_name_array( name_array, limit=10 )
+    n_str = name_array.collect{|c| "'#{c}'"}.join(',')
+    self.where( "name IN (#{n_str})" ).order( "population DESC" ).limit( limit )
+  end  
+  
   # ===================================
   #   Update Geocode
   # ===================================
