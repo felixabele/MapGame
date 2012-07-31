@@ -2,3 +2,5 @@
   %h1
     = @game.name
     = link_to( icon_for("Zufalls-Städte laden", 'icon-refresh'), '?random=true', :class => 'btn pull-right')
+
+.geo_map{ "data-map" => @map.get_geocloud_json, "data-game_id" => @game.id, "data-cities" => cities_for_geocloud( @cities, 15 ) }
