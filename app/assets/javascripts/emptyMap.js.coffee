@@ -25,6 +25,10 @@ class EmptyMap
     @stack[city_title]
   
      
+  # --- Is the GAmes Stack full ?
+  stackIsFull: ->
+    @stack_limit is @stack_count  
+     
   # ---------------------------------------------------
   # -- add the city to the stack or change the position
   # ---------------------------------------------------

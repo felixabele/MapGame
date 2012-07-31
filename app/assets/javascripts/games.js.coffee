@@ -140,8 +140,8 @@ $(document).bind 'empty_map_games.load', (e,obj) =>
   #   SUBMIT
   # -----------------------------
   $('#btn_submit').click -> 
-    if game.is_active
-      game.submit() if not $(@).hasClass 'disabled'
+    if game.is_active and game.stackIsFull()
+      game.submit()
       $( ".geo_cloud div" ).draggable( 'disable' )
       $(@).addClass 'disabled'
       false
