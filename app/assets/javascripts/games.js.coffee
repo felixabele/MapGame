@@ -3,8 +3,8 @@
 # ============================================
 # --- 10 Biggest Cities
 # ============================================
-$(document).bind 'biggest_10_cities_games.load', (e,obj) =>
-  console.log "Load Events for Action: biggest_10_cities"
+$(document).bind 'biggest_cities_games.load', (e,obj) =>
+  console.log "Load Events for Action: biggest_cities"
   
   #= require biggestCities
   
@@ -14,8 +14,10 @@ $(document).bind 'biggest_10_cities_games.load', (e,obj) =>
     attr: 
       class: 'city'
     events:
-      mouseover: hover_city = (event) ->
-        hover_city( event )
+      mouseenter: ->
+        $(@).css 'z-index': 200 # put in front
+      mouseleave: ->
+        $(@).css 'z-index': 1   # put back
       click: click_city = (event) ->
         click_city $( event.currentTarget )      
 
@@ -56,9 +58,6 @@ $(document).bind 'biggest_10_cities_games.load', (e,obj) =>
             $(@).find( '.place' ).html ''
             $(@).removeClass 'selected' 
           false
-
-  # --- Hover over a City
-  hover_city = (event) ->
 
   # --- Click a City
   #   @params: city (point on the map) (DOM-Element)

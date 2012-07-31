@@ -10,13 +10,20 @@ class BiggestCities
     @stack_size = 10
     @filled_slots = 0
     @game_id = ''
-    @validation_action = '/validate_biggest_10_cities'
+    @validation_action = '/validate_biggest_cities'
     @is_active = true
     @message_el = '.alert'
   
   # --- Setter
   setGameId: (game_id) ->
     @game_id = game_id
+  
+  # --- get City Names (keys of the stack)
+  getCityNames: ->
+    cn = []
+    for index, slot of @stack
+      cn.push slot
+    cn
   
   # ---------------------------------------------------
   # -- find the next empty slot and Add the City to it
@@ -64,7 +71,8 @@ class BiggestCities
         url: "#{@validation_action}/#{@game_id}"
         type: 'POST'
         dataType: 'json'
-        data: @stack
+        data: 
+          cities: @getCityNames()
         error: (jqXHR, textStatus, errorThrown) ->
           console.log "Validtion failed: #{textStatus}"
         success: (data, textStatus, jqXHR) =>
