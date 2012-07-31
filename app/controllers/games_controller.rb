@@ -24,7 +24,16 @@ class GamesController < ApplicationController
   #     @params: game.id, 
   def biggest_cities
     @game = Game.find( params[:id] )
-    @cities = @game.cities.order( "population DESC" ).limit( 10 )
+
+    # if flag random is active load 10 Cities radomly
+    if params[:random]
+      @cities = @game.cities.random
+    
+   # else: just get the biggest 10 Cities   
+    else
+      @cities = @game.cities.biggest
+    end     
+    
     @map = @game.map
   end
   
