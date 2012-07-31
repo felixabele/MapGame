@@ -3,8 +3,6 @@
     = @game.name
     = link_to( icon_for("Zufalls-Städte laden", 'icon-refresh'), '?random=true', :class => 'btn pull-right')
 
-= test_me_helper "Hallo das ist meine Nachricht"
-
 %p= @game.description
 .alert.alert-info
   <strong>Tipp</strong> Klicke die Städte in der Reihenfolge an, wie du sie einordnen willst.<br />
@@ -12,7 +10,7 @@
 
 %div.row.show-grid
   .span6
-    .geo_map{ "data-map" => @map.get_geocloud_json, "data-game_id" => @game.id, "data-cities" => cities_for_geocloud( @cities, 15 ) }
+    .geo_map{ "data-game_id" => @game.id, "data-cities" => cities_for_geocloud( @cities, 15 ) }
   .span6
     %ol{ :style => "float: right", :id => "output" }
 

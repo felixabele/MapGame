@@ -15,10 +15,6 @@ module MapsHelper
     js.html_safe
   end
   
-
-  def test_me_helper(msg)
-    "Hallo ich bin ein Test: #{msg}"
-  end
   
   # --- Insert Cities
   # @params: cities: array of cities
