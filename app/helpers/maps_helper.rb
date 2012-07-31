@@ -18,7 +18,7 @@ module MapsHelper
   
   # --- Insert Cities
   # @params: cities: array of cities
-  def cities_for_geocloud( cities, size=10 )
+  def cities_for_geocloud2( cities, size=10 )
     ds = Array.new
     cities.each do |city|
       ds << "{\"title\": \"#{city.name}\", \"size\": #{size}, \"coord\": [#{city.lon},#{city.lat}], \"id\": #{city.id}}"

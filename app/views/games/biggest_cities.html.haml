@@ -3,4 +3,21 @@
     = @game.name
     = link_to( icon_for("Zufalls-Städte laden", 'icon-refresh'), '?random=true', :class => 'btn pull-right')
 
-.geo_map{ "data-map" => @map.get_geocloud_json, "data-game_id" => @game.id, "data-cities" => cities_for_geocloud( @cities, 15 ) }
+%p= @game.description
+.alert.alert-info
+  <strong>Tipp</strong> Klicke die Städte in der Reihenfolge an, wie du sie einordnen willst.<br />
+  Eine schon eingeordnete Stadt wird bei erneutem Anklicken wieder freigegeben und die Position kann neu vergeben werden.
+
+%div.row.show-grid
+  .span6
+    .geo_map{ "data-map" => @map.get_geocloud_json, "data-game_id" => @game.id, "data-cities" => cities_for_geocloud2( @cities, 15 ) }
+  .span6
+    %ol{ :style => "float: right", :id => "output" }
+
+%hr
+-# Action-Links
+= link_to( icon_for("Zurücksetzen", 'icon-repeat ', 'white'), '#', :id => 'btn_clear', :class => 'btn btn-danger')  
+= link_to( icon_for("Abgeben", 'icon-check ', 'white'), '#', :id => 'btn_submit', :class => 'btn btn-success disabled')
+
+%p{ :class => "pull-right" }
+  = link_to "Zurück zur Übersicht", {:controller => 'games', :cat => 'biggest_cities'}
