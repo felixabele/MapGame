@@ -48,6 +48,28 @@ class City < ActiveRecord::Base
 =end
   
   # ===================================
+  #   Set Region
+  # ===================================
+  # --- Set a Region so that we won't load 
+  #     two cities on the same point
+  def self.set_region
+    bla = self
+      .select("count(*) as summe, ROUND(lat, 1) AS i_lat,  ROUND(lon, 1) AS i_lon")
+      .where("map_id = ?", 5)
+      .group("CONCAT(ROUND(lat, 1), ROUND(lon, 1))")
+      .limit(1)
+      
+    bla.first.i_lat
+    
+=begin    
+    self.find_by_sql("
+      SELECT id, COUNT(*) as summe, ROUND(lat, 1) AS i_lat, ROUND(lon, 1) AS i_lon 
+      FROM cities WHERE map_id = 5 
+      GROUP BY CONCAT(ROUND(lat, 1), ROUND(lon, 1)) ORDER BY summe DESC")
+=end
+  end
+  
+  # ===================================
   #   IMPORT BY FILE
   # ===================================
   def self.do_import( country, map_id )

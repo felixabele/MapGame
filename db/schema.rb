@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120726135312) do
+ActiveRecord::Schema.define(:version => 20120801175906) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120726135312) do
     t.float   "lon"
     t.float   "lat"
     t.string  "map_id"
+    t.integer "region"
   end
 
   create_table "games", :force => true do |t|
