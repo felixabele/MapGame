@@ -78,7 +78,7 @@ class EmptyMap
     for corr_city in results
       count++
       city_name = corr_city.title
-      corr_city.title = count      
+      corr_city.title = "#{city_name} (korrekt)"      
       map_el.drawPoint( corr_city, opt )
       
       distance = map_el.drawLine( corr_city, @stack[city_name] )                        

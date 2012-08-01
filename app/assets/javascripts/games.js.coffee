@@ -15,9 +15,9 @@ $(document).bind 'biggest_cities_games.load', (e,obj) =>
       class: 'city'
     events:
       mouseenter: ->
-        $(@).css 'z-index': 200 # put in front
+        $(@).addClass "marked"
       mouseleave: ->
-        $(@).css 'z-index': 1   # put back
+        $(@).removeClass "marked"
       click: click_city = (event) ->
         click_city $( event.currentTarget )      
 

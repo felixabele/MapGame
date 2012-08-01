@@ -5,6 +5,18 @@
   box-shadow: 2px 2px 4px $color;
 }
 
+@mixin text_shadow($color: #000, $off: 0 0 2px) {
+  text-shadow: $off $color;
+  -moz-text-shadow: $off $color;
+  -webkit-text-shadow: $off $color;
+}
+
+@mixin text_border($color: #000) {
+  text-shadow: 0 -1px $color, 1px 0 $color, 0 1px $color, -1px 0 $color;
+  -moz-text-shadow: 0 -1px $color, 1px 0 $color, 0 1px $color, -1px 0 $color;
+  -webkit-text-shadow: 0 -1px $color, 1px 0 $color, 0 1px $color, -1px 0 $color;
+}
+
 /* round-Corners */
 @mixin round_corners($radius: 4) {
   -moz-border-radius: #{$radius}px;
@@ -31,14 +43,18 @@ body {
         
         span.city_name { 
             position: relative; right: -20px; display: block; font-size: 11px; color: #333333;
-            text-shadow: 1px 1px 2px #B2B2B2; font-weight: normal; width: auto; white-space: nowrap; text-align: left}
+            @include text_shadow(#B2B2B2, 1px 1px 2px); font-weight: normal; width: auto; white-space: nowrap; text-align: left}
         span.place {
             display: block; height: 1px; }
     }
     div.selected {
-        background-color: #B2B2B2; text-align: center; font-size: 16px;
-        color: #ffffff; font-weight: bold; text-shadow: 1px 1px 3px #333333;} 
-        
+      background-color: #B2B2B2; text-align: center; font-size: 16px;
+      color: #ffffff; font-weight: bold; @include text_shadow(#333333, 1px 1px 3px);} 
+    div.marked {
+      z-index: 200; border-color: green;
+      span {
+        color: green; font-weight: bold; font-size: 14px;  @include text_border(#ffffff); }
+    }
     div.raw_point, div.dragged_point {
       width: 10px; height: 10px; margin: 15px 0 15px 10px; border-radius: 10px;}
     div.dragged_point {
