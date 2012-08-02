@@ -14,7 +14,7 @@ class City < ActiveRecord::Base
 
   # --- Get Cities randomly
   def self.random(limit=10)
-    self.order( "RAND()" ).limit( limit )
+    self.where( "MOD(region, #{rand(1..11)}) = 0" ).order( "RAND()" ).group( "region" ).limit( limit )
   end
   
   # --- Get Cities By name Array
@@ -52,22 +52,26 @@ class City < ActiveRecord::Base
   # ===================================
   # --- Set a Region so that we won't load 
   #     two cities on the same point
-  def self.set_region
-    bla = self
-      .select("count(*) AS c_count, ROUND(lat, 1) AS i_lat,  ROUND(lon, 1) AS i_lon")
-      .where("map_id = ?", 5)
-      .group("CONCAT(ROUND(lat, 1), ROUND(lon, 1))")
-      .limit(1)
-    
-    # SELECT * FROM cities WHERE ROUND(lat, 1) = 50.8 AND ROUND(lon, 1) = -1.1
-    "#{bla.first.i_lat} #{bla.first.i_lon} #{bla.first.c_count}"
-    
-=begin    
-    self.find_by_sql("
-      SELECT id, COUNT(*) as summe, ROUND(lat, 1) AS i_lat, ROUND(lon, 1) AS i_lon 
-      FROM cities WHERE map_id = 5 
-      GROUP BY CONCAT(ROUND(lat, 1), ROUND(lon, 1)) ORDER BY summe DESC")
-=end
+  def self.set_region( map_id )
+    if (map_id)
+      regions = self
+        .select("ROUND(lat, 1) AS i_lat,  ROUND(lon, 1) AS i_lon")
+        .where("map_id = ?", map_id)
+        .group("CONCAT(ROUND(lat, 1), ROUND(lon, 1))")
+
+      # Loop all Regions and Update Dataset
+      counter = 0;
+      regions.each do |region|
+        counter += 1
+        cities = self.where(
+          "ROUND(lat, 1) = ? AND ROUND(lon, 1) = ? AND map_id = ?", 
+          region.i_lat, region.i_lon, map_id)
+        cities.each do |city|
+          city.region = counter
+          city.save
+        end
+      end
+    end
   end
   
   # ===================================
